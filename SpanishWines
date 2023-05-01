@@ -1,0 +1,1402 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/"
+     xml:base="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:SpanishWines="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines">
+        <rdfs:comment>Author: Francesc Pujol Fontrodona</rdfs:comment>
+        <rdfs:comment>Ontology of Spanish Wines, focused on the origin and classification of wine</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#has_price -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#has_price">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price"/>
+        <rdfs:comment>The price of a wine in a value scale.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#has_quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#has_quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality"/>
+        <rdfs:comment>The quality of a wine in a value scale.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_originated_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_originated_in">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_the_origin_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+        <rdfs:comment>The Spanish region of the grapes used in the elaboration of the wine.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_produced_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_produced_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_producer_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <rdfs:comment>The producer of the wine.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_producer_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_producer_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:comment>The wine that is produced by a winery.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_the_origin_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_the_origin_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:comment>The wine that is produced in this region</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The price of the wine. In euros.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#rating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The rating of the wine by the consumers. From 1 to 5</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>The year the grapes were harvested.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#year_creation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#year_creation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Andalucia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Andalucia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Aragon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Aragon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla-LaMancha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla-LaMancha">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla_y_Leon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla_y_Leon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Catalunya -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Catalunya">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Cheap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Cheap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price"/>
+        <rdfs:comment>Price: less than 15 euros.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Comunidad_Valenciana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Comunidad_Valenciana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Comunidad_de_Madrid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Comunidad_de_Madrid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Expensive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Expensive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price"/>
+        <rdfs:comment>Price: between 51 and 250 euros</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Galicia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Galicia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#High_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#High_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality"/>
+        <rdfs:comment>Rating: more than 4.6</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Islas_Baleares -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Islas_Baleares">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Rioja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Rioja">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+        <rdfs:sameAs>http://dbpedia.org/page/La_Rioja</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Low_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Low_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality"/>
+        <rdfs:comment>Rating: less than 4.3</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Medium_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Medium_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality"/>
+        <rdfs:comment>Rating: between 4.3 and 4.6</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Moderately_Priced -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Moderately_Priced">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price"/>
+        <rdfs:comment>Price: between 16 and 50 euros.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Murcia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Murcia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Navarra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Navarra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Pais_Vasco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Pais_Vasco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine_classifier"/>
+        <rdfs:comment>Wine classification by cost.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine_classifier"/>
+        <rdfs:comment>Wine classification by ratings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Crianza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Crianza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine"/>
+        <rdfs:comment>Red wine. Aging: minimum 9 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Great_Reserve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Great_Reserve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine"/>
+        <rdfs:comment>Red wine. Aging: minimum 60 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine"/>
+        <rdfs:comment>Red wine. Aging: minimum 48 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Semi-Crianza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Semi-Crianza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine"/>
+        <rdfs:comment>Red wine. Aging: minimum 24 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:comment>A type of wine made from dark-colored grape varieties.</rdfs:comment>
+        <rdfs:sameAs>http://dbpedia.org/page/Red_wine</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Great_Reserve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Great_Reserve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine"/>
+        <rdfs:comment>Rosé wine. Aging: minimum 36 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine"/>
+        <rdfs:comment>Rosé wine. Aging: minimum 24 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Semi-Crianza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Semi-Crianza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine"/>
+        <rdfs:comment>Rosé wine. Aging: minimum 9 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:comment>A type of wine that incorporates some of the color from the grape skins, but not enough to qualify it as a red wine.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Spain">
+        <rdfs:comment>Country where the ontology wines are from.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Very_expensive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Very_expensive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Price"/>
+        <rdfs:comment>Price: more than 251 euros</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Great_Reserve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Great_Reserve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine"/>
+        <rdfs:comment>White wine. Aging: minimum 36 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine"/>
+        <rdfs:comment>White wine. Aging: minimum 24 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Semi-Crianza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Semi-Crianza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine"/>
+        <rdfs:comment>White wine. Aging: minimum 9 months</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+        <rdfs:comment>Is made from white or black grapes, but removing the skin of the grape.</rdfs:comment>
+        <rdfs:sameAs>http://dbpedia.org/page/White_wine</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine">
+        <rdfs:comment>An alcoholic drink typically made from fermented grapes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine_classifier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine_classifier">
+        <rdfs:comment>Two wine classification criteria. Price and quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#is_producer_of"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>A place where wine is made.</rdfs:comment>
+        <rdfs:sameAs>http://dbpedia.org/page/Winery</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Almansa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Almansa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla-LaMancha"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Atalaya_del_Camino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Alvaro_Palacios -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Alvaro_Palacios">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#L_Ermita_Velles_Vinyes_Priorat"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1989</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Anada_Palo_Cortado1987 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Anada_Palo_Cortado1987">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Reservation"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Jerez"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Gonzalez-Byass"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">230.0</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1991</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Atalaya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Atalaya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Atalaya_del_Camino"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2007</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Bodega_Mocén -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Bodega_Mocén">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Selección_Especial_Verdejo"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1988</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Campo_de_Borja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Campo_de_Borja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Aragon"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Godina_Garnacha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Conreria_de_Scala_Dei -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Conreria_de_Scala_Dei">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Les_Brugueres"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1982</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Godina_Garnacha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Godina_Garnacha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Crianza"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Campo_de_Borja"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Morca"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.25</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Gonzalez-Byass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Gonzalez-Byass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Anada_Palo_Cortado1987"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1970</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Jerez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Jerez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Andalucia"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Anada_Palo_Cortado1987"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#L_Ermita_Velles_Vinyes_Priorat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#L_Ermita_Velles_Vinyes_Priorat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Great_Reserve"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Priorat"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Alvaro_Palacios"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2750.0</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2010</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Atalaya_del_Camino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#La_Atalaya_del_Camino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Crianza"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Almansa"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Atalaya"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.66</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Les_Brugueres -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Les_Brugueres">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Crianza"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Priorat"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Conreria_de_Scala_Dei"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.75</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2018</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Louro_Godello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Louro_Godello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Semi-Crianza"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Valdeorras"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rafael_palacios"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.7</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Morca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Morca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Godina_Garnacha"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2014</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Priorat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Priorat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Catalunya"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#L_Ermita_Velles_Vinyes_Priorat"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Les_Brugueres"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rafael_palacios -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rafael_palacios">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Louro_Godello"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2004</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Ribera_del_Duero -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Ribera_del_Duero">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla_y_Leon"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Unico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rueda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rueda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Castilla_y_Leon"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Selección_Especial_Verdejo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Selección_Especial_Verdejo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Selección_Especial_Verdejo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Semi-Crianza"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rueda"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Bodega_Mocén"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.26</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2021</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Unico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Unico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Great_Reserve"/>
+        <SpanishWines:is_originated_in rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Ribera_del_Duero"/>
+        <SpanishWines:is_produced_by rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Vega_Sicilia"/>
+        <SpanishWines:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">324.95</SpanishWines:price>
+        <SpanishWines:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.9</SpanishWines:rating>
+        <SpanishWines:year rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2009</SpanishWines:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Valdeorras -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Valdeorras">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Galicia"/>
+        <SpanishWines:is_the_origin_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Louro_Godello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Vega_Sicilia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Vega_Sicilia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Winery"/>
+        <SpanishWines:is_producer_of rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Unico"/>
+        <SpanishWines:year_creation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1864</SpanishWines:year_creation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Cheap"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Expensive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Moderately_Priced"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Very_expensive"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#High_Quality"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Low_Quality"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Medium_Quality"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Red_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Rosé_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#White_Wine"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.0</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Moderately_Priced"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250.0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Very_expensive"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250.0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Expensive"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#price"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/p"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Cheap"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S7</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#rating"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#High_Quality"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#rating"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Medium_Quality"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#rating"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/r"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines#Low_Quality"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/pujol/ontologies/2023/3/SpanishWines/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
